@@ -49,7 +49,9 @@ sudo update-initramfs -u
 12. Copy cuDNN files to CUDA
 
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-11.2/lib64 
+
 sudo chmod a+r /usr/local/cuda-11.2/include/cudnn*.h /usr/local/cuda-11.2/lib64/libcudnn*
 
 13. Possibly reboot (sudo reboot)
