@@ -25,9 +25,13 @@ sudo vim /etc/modprobe.d/blacklist.conf
 6. Insert follow lines to the blacklist.conf:
 
 blacklist nouveau
+
 blacklist lbm-nouveau
+
 options nouveau modeset=0
+
 alias nouveau off
+
 alias lbm-nouveau off
 
 Then, save and exit.
