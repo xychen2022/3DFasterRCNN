@@ -8,7 +8,7 @@ Environment CUDA 11.2, cuDNN 8.1
 
 1. Download CUDA 11.2 and cuDNN 8.1 to a specified folder
 
-2. cd FOLDER
+2. Change directory to the folder where CUDA and cuDNN are stored
 
 3. Remove all nvidia packages, skip this if your system is fresh installed
 
