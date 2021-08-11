@@ -20,9 +20,9 @@ sudo apt-get install dkms build-essential linux-headers-generic
 
 5. Now block and disable nouveau kernel driver:
 
-sudo vim /etc/modprobe.d/blacklist.conf
+sudo vi /etc/modprobe.d/blacklist.conf
 
-6. Insert follow lines to the blacklist.conf:
+6. Insert following lines to the blacklist.conf:
 
 blacklist nouveau
 
