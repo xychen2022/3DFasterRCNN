@@ -18,7 +18,7 @@ sudo apt-get remove nvidia* && sudo apt autoremove
 
 sudo apt-get install dkms build-essential linux-headers-generic
 
-5. Now block and disable nouveau kernel driver:
+5. Now, block and disable nouveau kernel driver using command:
 
 sudo vi /etc/modprobe.d/blacklist.conf
 
@@ -40,13 +40,15 @@ Then, save and exit.
 
 echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 
-8. build the new kernel by:
+8. Build the new kernel by:
 
 sudo update-initramfs -u
 
 9. Reboot (sudo reboot)
 
-10. sudo sh cuda_11.2.0_460.27.04_linux.run (It may vary for different CUDA versions)
+10. Install CUDA:
+
+sudo sh cuda_11.2.0_460.27.04_linux.run (It may vary for different CUDA versions)
 
 11. sudo apt install nvidia-cuda-toolkit
 
