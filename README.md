@@ -6,7 +6,7 @@ https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
 
 Environment CUDA 11.2, cuDNN 8.1
 
-1. Download CUDA 11.2 and cuDNN 8.1 to a specified folder (after downloading and possibly decompressin, you will have cuda_11.2.0_460.27.04_linux.run and a folder named cuda)
+1. Download CUDA 11.2 and cuDNN 8.1 to a specified folder (after downloading and possibly decompressin, you will have cuda_11.2.0_460.27.04_linux.run and a subfolder named cuda)
 
 2. Change directory to the folder where CUDA and cuDNN are stored
 
