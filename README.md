@@ -8,21 +8,19 @@ Environment CUDA 11.2, cuDNN 8.1
 
 1. Download CUDA 11.2 and cuDNN 8.1 to a specified folder (after downloading and possibly decompressin, you will have cuda_11.2.0_460.27.04_linux.run and a subfolder named cuda)
 
-2. Change directory to the folder where CUDA and cuDNN are stored
-
-3. Remove all nvidia packages, skip this if your system is fresh installed
+2. Remove all nvidia packages, skip this if your system is fresh installed
 
 sudo apt-get remove nvidia* && sudo apt autoremove
 
-4. Install some packages for build kernel:
+3. Install some packages for build kernel:
 
 sudo apt-get install dkms build-essential linux-headers-generic
 
-5. Now, block and disable nouveau kernel driver using command:
+4. Now, block and disable nouveau kernel driver using command:
 
 sudo vi /etc/modprobe.d/blacklist.conf
 
-6. Insert following lines to the blacklist.conf:
+5. Insert following lines to the blacklist.conf:
 
 blacklist nouveau
 
@@ -36,15 +34,17 @@ alias lbm-nouveau off
 
 Then, save and exit.
 
-7. Disable the Kernel nouveau by typing the following commands(nouveau-kms.conf may not exist,it is ok):
+6. Disable the Kernel nouveau by typing the following commands(nouveau-kms.conf may not exist,it is ok):
 
 echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 
-8. Build the new kernel by:
+7. Build the new kernel by:
 
 sudo update-initramfs -u
 
-9. Reboot (sudo reboot)
+8. Reboot (sudo reboot)
+
+9. Change directory to the folder where CUDA and cuDNN are stored
 
 10. Install CUDA (the command may vary for different CUDA versions):
 
