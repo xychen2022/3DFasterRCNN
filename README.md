@@ -50,7 +50,9 @@ sudo update-initramfs -u
 
 sudo sh cuda_11.2.0_460.27.04_linux.run
 
-11. sudo apt install nvidia-cuda-toolkit
+11. Install nvidia cuda tookit (for using, e.g., nvcc -V)
+
+sudo apt install nvidia-cuda-toolkit
 
 12. Copy cuDNN files to CUDA
 
