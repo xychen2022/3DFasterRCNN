@@ -46,9 +46,9 @@ sudo update-initramfs -u
 
 9. Reboot (sudo reboot)
 
-10. Install CUDA:
+10. Install CUDA (the command may vary for different CUDA versions):
 
-sudo sh cuda_11.2.0_460.27.04_linux.run (It may vary for different CUDA versions)
+sudo sh cuda_11.2.0_460.27.04_linux.run
 
 11. sudo apt install nvidia-cuda-toolkit
 
