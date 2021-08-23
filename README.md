@@ -1,4 +1,4 @@
-This is the code for our TMI paper Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN. Only coarse stage code is provided, since the implementation of the model for landmark location refinement is trivial. For more details, please refer
+This is the code for our TMI paper "Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN". Only coarse stage code is provided, since the implementation of the model for landmark location refinement is trivial. For more details, please refer
 
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9494574
 
