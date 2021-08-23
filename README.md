@@ -1,4 +1,4 @@
-Tested with Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Note that even slightly different environment from ours may lead to errors.
+Tested with Python 3.8, Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Note that even slightly different environment from ours may lead to errors.
 
 Training command:
 
