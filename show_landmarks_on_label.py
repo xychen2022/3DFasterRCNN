@@ -1,50 +1,44 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon May  4 20:32:39 2020
+Created on Mon Aug 16 15:26:46 2021
 
 @author: xiaoyangchen
 """
+
 import h5py
 import numpy as np
 import SimpleITK as sitk
 
-subject_list = [80]
+subject_list = [64]
 
 for i in range(len(subject_list)):
-    subject_id = subject_list[i]
+    subject_index = subject_list[i]
+    
+    label = sitk.ReadImage('./case_{0}_cbct_patient/seg.mha'.format(subject_index))
+    spacing = label.GetSpacing()[::-1]
+    label = ( sitk.GetArrayFromImage(label) > 0).astype(np.float32) * 2000
 
+#    # subject8
+#    lmks = np.loadtxt('./case_{0}_ct_normal_pred.txt'.format(subject_index), delimiter=',')
+#    lmks = np.round( lmks/np.array(spacing) )
+#    lmks = lmks.astype(np.int32)
+#    print(lmks, '\n')
+    
     # subject8
-    lmks = np.array([[179., 131., 334.],
-                     [426., 158., 329.],
-                     [204., 110., 281.],
-                     [404., 136., 274.],
-                     [228., 107., 265.],
-                     [376., 127., 256.],
-                     [138., 261., 258.],
-                     [163., 157., 284.],
-                     [440., 293., 259.],
-                     [438., 190., 275.],
-                     [297.,  49., 148.],
-                     [320.,  51., 150.],
-                     [250.,  79.,  61.],
-                     [358.,  98.,  60.],
-                     [177., 171., 245.],
-                     [170., 208., 206.],
-                     [416., 202., 242.],
-                     [415., 240., 200.]])
-    
+    with h5py.File('./case_{0}_cbct_patient.hdf5'.format(subject_index), 'r') as f:
+        lmks = f['landmark_i'][()][:, ::-1]*1.6
+    lmks = np.round( lmks/np.array(spacing) )
     lmks = lmks.astype(np.int32)
-    
-    label = sitk.ReadImage('/Volumes/XYCHEN/label_nii/subject{0}.nii.gz'.format(subject_id))
-    label = sitk.GetArrayFromImage(label) * 1000
+    print(lmks, '\n')
     
     for idx in range(lmks.shape[0]):
-        print('idx: ', idx)
-        landmark_i = lmks[idx] - 1
         
-        if not np.all(landmark_i == np.array([-1, -1, -1])):
-            x0, y0, z0 = landmark_i.astype(np.int32)
+        landmark_i = lmks[idx] #- 1
+        print('idx: ', idx, landmark_i)
+        
+        if not np.all(landmark_i == np.array([0, 0, 0])):
+            z0, y0, x0 = landmark_i.astype(np.int32)
             radius = 3
             
             for x in range(x0-radius, x0+radius+1):
@@ -56,7 +50,4 @@ for i in range(len(subject_list)):
     
     new_label = label
     new_label = sitk.GetImageFromArray(new_label)
-    sitk.WriteImage(new_label, '/Volumes/XYCHEN/lmk_on_label/subject{0}_phase2.nii.gz'.format(subject_id))
-
-
-
+    sitk.WriteImage(new_label, './case_{0}_cbct_patient/lmks_show_on_label_gt.mha'.format(subject_index))
