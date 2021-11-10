@@ -18,16 +18,14 @@ python landmark_detection_group1_size24.py --mode=inference --weight-path=./mode
 If you find our work useful, please consider cite our paper:
 
 @article{chen2021fast,
-title={Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN},
-author={Chen, Xiaoyang and Lian, Chunfeng and Deng, Hannah H and Kuang, Tianshu and Lin, Hung-Ying and Xiao, Deqiang and Gateno, Jaime and Shen, Dinggang and Xia, James J and Yap, Pew-Thian},
-journal={IEEE Transactions on Medical Imaging},
-year={2021},
-publisher={IEEE}
-}
 
-@inproceedings{plummerCITE2018,
-Author = {Bryan A. Plummer and Paige Kordas and M. Hadi Kiapour and Shuai Zheng and Robinson Piramuthu and Svetlana Lazebnik},
-Title = {Conditional Image-Text Embedding Networks},
-Booktitle  = {The European Conference on Computer Vision (ECCV)},
-Year = {2018}
+title={Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN},
+
+author={Chen, Xiaoyang and Lian, Chunfeng and Deng, Hannah H and Kuang, Tianshu and Lin, Hung-Ying and Xiao, Deqiang and Gateno, Jaime and Shen, Dinggang and Xia, James J and Yap, Pew-Thian},
+
+journal={IEEE Transactions on Medical Imaging},
+
+year={2021},
+
+publisher={IEEE}
 }
