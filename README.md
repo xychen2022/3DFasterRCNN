@@ -19,13 +19,9 @@ If you find our work useful, please consider cite our paper:
 
 @article{chen2021fast,
 
-title={Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN},
-
-author={Chen, Xiaoyang and Lian, Chunfeng and Deng, Hannah H and Kuang, Tianshu and Lin, Hung-Ying and Xiao, Deqiang and Gateno, Jaime and Shen, Dinggang and Xia, James J and Yap, Pew-Thian},
-
-journal={IEEE Transactions on Medical Imaging},
-
-year={2021},
-
+title={Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN},\\
+author={Chen, Xiaoyang and Lian, Chunfeng and Deng, Hannah H and Kuang, Tianshu and Lin, Hung-Ying and Xiao, Deqiang and Gateno, Jaime and Shen, Dinggang and Xia, James J and Yap, Pew-Thian},\\
+journal={IEEE Transactions on Medical Imaging},\\
+year={2021},\\
 publisher={IEEE}
 }
