@@ -2,8 +2,6 @@ This is the code for our TMI paper "Fast and Accurate Craniomaxillofacial Landma
 
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9494574
 
-
-
 Our code is tested with Python 3.8, Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Note that even slightly different environment from ours may lead to training/inference errors.
 
 >>> Training command:
