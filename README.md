@@ -2,7 +2,9 @@ This is the code for our TMI paper "Fast and Accurate Craniomaxillofacial Landma
 
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9494574
 
-Our code is tested with Python 3.8, Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Note that even slightly different environment from ours may lead to training/inference errors.
+Our code is tested with Python 3.8, Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Note that even slightly different environment from ours may lead to training/inference errors. Currently, the same environment as ours is required to train/test models. We will release our source codes for 3D ROI-align and non-maximum suppression to the public to allow users compile and use them in different environments.
+
+The algorithm is designed to be general. That is, users can use any imaging modalities that are prefered in different applications. To use our code in a different application, a user should prepare the data (i.e., images and ground truth landmark locations) the same way as ours. Note that users should carefully choose the down-sampling rate, as a too large image spacing may lose a lot of image details that are essential for accurate landmark localization. Depending on the sizes of your data, users should choose the smallest down-sampling rate possible.
 
 ### Training command:
 
