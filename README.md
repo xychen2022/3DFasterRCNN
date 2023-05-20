@@ -1,3 +1,5 @@
+Our CUDA source codes have been released! They will allow you to compile then and run the algorithm in a different environment than ours, which is Python 3.8, Tensorflow 2.5, CUDA 11.2 and cuDNN 8.1. Instructions are given in ReadMe.txt inside both CropAndResize3D and non_max_suppression.
+
 This is the code for our TMI paper "Fast and Accurate Craniomaxillofacial Landmark Detection via 3D Faster R-CNN". Only coarse stage code is provided, since the implementation of the model for landmark location refinement is trivial. For more details, please refer
 
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9494574
