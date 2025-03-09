@@ -17,3 +17,10 @@ Then, run the follwing commands
 
     nvcc -std=c++11 -c -o non_max_suppression_op.cu.o non_max_suppression_op_gpu.cu.cc -I/usr/local/cuda-11.2/include ${TF_CFLAGS[@]} -D_GLIBCXX_USE_CXX11_ABI=0 ${TF_LFLAGS[@]}  -x cu -Xcompiler -fPIC
     g++ -std=c++11 -shared -o non_max_suppression_op_gpu.so non_max_suppression_op.cc non_max_suppression_op.cu.o -D_GLIBCXX_USE_CXX11_ABI=0 -I$TF_IFLAGS -I$TF_IFLAGS/external/nsync/public -L/usr/local/cuda-11.2/lib64 ${TF_LFLAGS[@]} -fPIC -lcudart
+
+    If you use GPU version, you need to change line 48 in landmark_detection_group1_size24.py to use the correct version.
+
+
+You can also slip the nvcc step, which is related to CUDA, and slightly change the g++ step to get the CPU version:
+
+    g++ -std=c++11 -shared -o non_max_suppression_op.so non_max_suppression_op.cc -D_GLIBCXX_USE_CXX11_ABI=0 -I$TF_IFLAGS -I$TF_IFLAGS/external/nsync/public ${TF_CFLAGS[@]} ${TF_LFLAGS[@]} -fPIC
